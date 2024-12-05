@@ -5,14 +5,14 @@ const encryptorRouter = express.Router();
 
 encryptorRouter.post('/encode', (req , res ) => {
     const {password, message} = req.body;
-    const encodedMessage = new Vigenere(password).crypt(message);
-    res.send({Encoded:encodedMessage});
+    const encodeMessage = new Vigenere.Cipher(password).crypt(message);
+    res.send({ encoded: encodeMessage });
 });
 
 encryptorRouter.post('/decode', (req , res ) => {
     const {password, message} = req.body;
-    const decodedMessage = new Vigenere(password).crypt(message);
-    res.send({Decoded:decodedMessage});
+    const decodeMessage = new Vigenere.Decipher(password).crypt(message);
+    res.send({ decoded: decodeMessage });
 });
 
 export default encryptorRouter;

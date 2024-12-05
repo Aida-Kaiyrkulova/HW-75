@@ -3,7 +3,6 @@ import { Container, CssBaseline } from '@mui/material';
 import Encryptor from './features/containers/Encryptor.tsx';
 import { Route, Routes } from 'react-router-dom';
 
-
 const App = () => {
 
   return (
